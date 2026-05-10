@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Global styles
+ */
+
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    font-family: var(--font-manrope), "Segoe UI", sans-serif;
+    @apply bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 transition-colors duration-300;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 dark:bg-slate-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400 dark:bg-slate-600;
+  }
+
+  /* Selection */
+  ::selection {
+    @apply bg-primary-500 text-white;
+  }
+
+  /* Inputs */
+  input,
+  textarea,
+  select {
+    @apply transition-colors duration-200;
+  }
+
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2 dark:ring-offset-slate-950;
+  }
+
+  /* Buttons */
+  button {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  button:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  /* Links */
+  a {
+    @apply text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 transition-colors;
+  }
+
+  /* Headers */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-space-grotesk), "Segoe UI", sans-serif;
+    @apply font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  /* Code blocks */
+  code {
+    @apply bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded font-mono text-sm;
+  }
+
+  pre {
+    @apply bg-slate-900 text-white p-4 rounded-lg overflow-auto;
+  }
+
+  /* Tables */
+  table {
+    @apply w-full border-collapse;
+  }
+
+  th {
+    @apply bg-slate-100 dark:bg-slate-800 p-3 text-left font-semibold;
+  }
+
+  td {
+    @apply p-3 border-b border-slate-200 dark:border-slate-700;
+  }
+
+  tr:hover {
+    @apply bg-slate-50 dark:bg-slate-900;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white dark:bg-slate-900 rounded-lg shadow-md p-6 transition-shadow hover:shadow-lg;
+  }
+
+  .card-glass {
+    @apply backdrop-blur-xl bg-white/10 dark:bg-black/20 rounded-xl border border-white/20 p-6;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply px-4 py-2 rounded-lg font-semibold transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-slate-50 hover:bg-slate-300 dark:hover:bg-slate-600;
+  }
+
+  .btn-ghost {
+    @apply text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900;
+  }
+
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-sm font-medium;
+  }
+
+  /* Input groups */
+  .input-group {
+    @apply relative flex items-center;
+  }
+
+  .input-group input {
+    @apply w-full;
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+/* Utilities */
+.text-balance {
+  text-wrap: balance;
+}
+
+.glass-effect {
+  @apply backdrop-blur-md bg-white/10 dark:bg-black/20 border border-white/20;
+}
+
+.shadow-glass {
+  @apply shadow-[0_8px_32px_0_rgba(31,38,135,0.37)];
+}
